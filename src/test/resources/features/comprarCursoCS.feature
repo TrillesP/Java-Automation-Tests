@@ -16,3 +16,6 @@ Feature: Purchase Class CS
       | curso   | preco       |
       | "CTFL"  | "R$ 104,17" |
       | "Java"  | "R$ 24,83"  |
+
+
+  Scenario:
