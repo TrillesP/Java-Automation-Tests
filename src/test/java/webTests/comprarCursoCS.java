@@ -7,6 +7,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -42,6 +43,20 @@ public class comprarCursoCS {
         System.out.println("2 - Escreveu o curso e clicou na lupa.");
     }
 
+    @When("^move the mouse to button to load more and click$")
+    public void move_the_mouse_to_button_to_load_more_and_click() {
+        wait.until(driver -> driver.findElement(By.xpath("//span[contains(text(),'Carregar Mais')]")));
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(By.xpath("//span[contains(text(),'Carregar Mais')]"))).perform();
+        driver.findElement(By.xpath("//span[contains(text(),'Carregar Mais')]")).click();
+        System.out.println("2aa - Moveu e clickou em carregar");
+        wait.until(driver -> driver.findElement(By.cssSelector("div.landing main.website-page:nth-child(3) section.content-list.website-component div.container.no-sidebar.divider-NONE div.component-content div.list-content:nth-child(2) main.content-list-main a.no-link-style.content-card:nth-child(14) main:nth-child(2) > h3.content-card-name.variant-primary")));
+        WebElement ele = driver.findElement(By.cssSelector("div.landing main.website-page:nth-child(3) section.content-list.website-component div.container.no-sidebar.divider-NONE div.component-content div.list-content:nth-child(2) main.content-list-main a.no-link-style.content-card:nth-child(14) main:nth-child(2) > h3.content-card-name.variant-primary"));
+        action.moveToElement(ele).perform();
+        ele.click();
+        System.out.println("2ab - Moveu o mouse e clickou no curso.");
+    }
+
     @Then("^I see the search results for \"([^\"]*)\"$")
     public void i_see_the_search_results_for(String curso) {
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.cssSelector("h3.content-card-name")),curso));
@@ -52,6 +67,14 @@ public class comprarCursoCS {
     public void i_click_on() {
         driver.findElement(By.cssSelector("h3.content-card-name")).click();
         System.out.println("4 - Clicou no nome do curso.");
+    }
+
+    @Then("^I confirm the Class' name as \"([^\"]*)\" and it's free$")
+    public void i_confirm_the_Class_name_as_and_it_s_free(String nome){
+        wait.until(driver -> driver.findElement(By.cssSelector("div.content-price")));
+        wait.until(ExpectedConditions.titleContains(nome));
+        wait.until(ExpectedConditions.textToBe(By.cssSelector("div.content-price"),"R$ 0,00"));
+        System.out.println("3a - Confirmou que o nome da classe é "+nome+" e é grátis.");
     }
 
     @Then("^I confirm the Class' name as \"([^\"]*)\" and it's price as \"([^\"]*)\"$")

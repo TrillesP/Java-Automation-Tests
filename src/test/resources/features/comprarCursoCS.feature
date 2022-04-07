@@ -18,4 +18,7 @@ Feature: Purchase Class CS
       | "Java"  | "R$ 24,83"  |
 
 
-  Scenario:
+  Scenario: Search with mouse click
+    Given I access Iterasys website
+    When move the mouse to button to load more and click
+    Then I confirm the Class' name as "Python" and it's free
