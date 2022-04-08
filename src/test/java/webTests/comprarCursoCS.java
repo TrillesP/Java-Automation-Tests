@@ -21,7 +21,7 @@ public class comprarCursoCS {
 
     @Before
     public void iniciar() {
-        System.setProperty("webdriver.chrome.driver", "drivers/chrome/99/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chrome/100/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver,Duration.ofSeconds(10),Duration.ofMillis(1));
