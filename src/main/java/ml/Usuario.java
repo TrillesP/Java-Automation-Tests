@@ -1,17 +1,21 @@
 package ml;
 
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Calendar;
 
 import common.Evidencias;
 import common.Logs;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
-import org.junit.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import static java.time.temporal.ChronoUnit.SECONDS;
 
@@ -27,7 +31,7 @@ public class Usuario {
         @Before
         public void iniciar(){
             url = "https://www.mercadolivre.com.br";
-            System.setProperty("webdriver.chrome.driver", "drivers/chrome/99/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "drivers/chrome/100/chromedriver.exe");
             driver = new ChromeDriver();
             evidencias = new Evidencias();
             logs = new Logs();
@@ -39,7 +43,7 @@ public class Usuario {
         }
 
         @Test
-        public void buscar() throws Exception {
+        public void buscar() throws IOException {
             String casoDeTeste = "Pesquisa Mercado Livre";
             String dataLog = new SimpleDateFormat("yyyy-MM-dd HH-mm").format(Calendar.getInstance().getTime());
             logs.registrarCabecalho(dataLog);

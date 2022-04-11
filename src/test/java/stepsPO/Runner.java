@@ -17,6 +17,5 @@ import org.testng.annotations.Test;
     }
 
 )
-public class Runner extends AbstractTestNGCucumberTests {   //Equivale ao @RunWith do JUnit
+public class Runner extends AbstractTestNGCucumberTests {}   //Equivale ao @RunWith do JUnit
 
-}
