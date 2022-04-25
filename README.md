@@ -6,10 +6,10 @@ Fiz testes com barra de busca e comecei a usar WebDriverWait pra conseguir rodar
 Asserts usados pra identificar se os testes passaram.
 Testei se identificava um smartphone específico numa página de busca.
 
-
 Criei outra classe para uso comum de printscreens, organizei as pastas do projeto com datas e horários para os screenshots com nomes diferentes também.
 Criei log files com data e hora. Aprendi a dar append nos arquivos e a formatar data até milisegundos.
 
+--------------------
 
 --BDD, Cucumber
 
