@@ -12,6 +12,7 @@ Criei log files com data e hora. Aprendi a dar append nos arquivos e a formatar 
 
 
 --BDD, Cucumber
+
 Usei Cucumber no método BDD com o pacote Selenium pra criar PageObject/PageFactory para eventualmente abrir um site, fazer uma pesquisa e identificar o preço e o nome de aulas no site https://iterasys.com.br/pt.
 
 Otimizei o código que aprendi anteriormente para testes de buscas, aprendi sobre Scenario Outline com exemplos, parei de usar Thread.sleep, otimizando as formas de wait.until utilizadas em Java com certas condições esperadas.
