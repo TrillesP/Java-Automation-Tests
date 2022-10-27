@@ -1,3 +1,5 @@
+Testes feitos utilizando IntelliJ.
+
 <h2>--Aprendendo Selenium em Java</h2>
 
 Baixei, organizei as pastas do projeto e instanciei o Chrome WebDriver
